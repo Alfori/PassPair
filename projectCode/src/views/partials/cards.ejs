@@ -1,0 +1,179 @@
+<%
+// Define the card dictionary
+const cardDict = {
+  "card1": {
+    "title": "Winter Park",
+    "description": "Winter Park, recently voted #1 Ski Resort in North America by USA Today readers, is the closest major mountain destination to Denver and offers train access right at the base, making it as easy to get to as it is to love. With over 3,000 acres of skiable terrain and some of the most consistent snow in Colorado, world-class skiing meets laid back living in Winter Park. Come for the quintessential Colorado experience. Colorado unfiltered.",
+    "image_url": "/resources/images/first.png",
+    "url": "https://www.winterparkresort.com/",
+    "filtertype": "Ikon"
+  },
+  "card2": {
+    "title": "Epic Resort",
+    "description": "Epic Resort in Colorado offers breathtaking mountain vistas coupled with world-class skiing conditions. The resort embraces all, from skiing novices to experts, with its diverse range of slopes. Enjoy après-ski activities in the vibrant village, making your stay an unforgettable blend of adventure and relaxation.",
+    "image_url": "/resources/images/second.png",
+    "url": "https://www.winterparkresort.com/",
+    "filtertype": "Epic"
+  },
+  "card3": {
+    "title": "Indy Resort",
+    "description": "Indy Resort in Colorado is a charming winter haven, renowned for its intimate setting and diverse terrains. It offers a unique blend of thrilling ski slopes and pristine natural beauty. Perfect for adventurers and peace-seekers alike, Indy Resort promises an unforgettable, immersive mountain experience.",
+    "image_url": "/resources/images/third.png",
+    "url": "https://www.winterparkresort.com/",
+    "filtertype": "Indy"
+  },
+  "card4": {
+    "title": "Mountain Resort",
+    "description": "Mountain Resort in Colorado is a high-altitude paradise, offering unparalleled panoramic views and top-tier ski trails. Ideal for thrill-seekers and nature lovers, its pristine slopes and cozy lodges create the perfect setting for a rejuvenating getaway. Discover your own mountain nirvana at Mountain Resort.",
+    "image_url": "/resources/images/fourth.png",
+    "url": "https://indyskipass.com/resort/echo-mountain/",
+    "filtertype": "Mountain"
+  },
+  "card6": {
+    "title": "Sun Valley",
+    "description": "Nestled 6,000 feet high among the mountains and ranchlands of south-central Idaho, Sun Valley is surrounded by almost a million acres of alpine beauty.",
+    "image_url": "/resources/images/SunValley.jpg",
+    "url": "https://mountaincollective.com/resort/sun-valley/",
+    "filtertype": "Mountain"
+  },
+  "card7": {
+    "title": "Steamboat",
+    "description": "Welcome to “Ski Town U.S.A.®,” where outdoor adventure and the Wild West collide. Steamboat is home to some of the greatest skiing in North America, not to mention some of the greatest Olympians, and where Champagne Powder® Snow was born.",
+    "image_url": "/resources/images/SteamboatSprings.jpg",
+    "url": "https://www.steamboat.com/?_ga=2.267435658.505848605.1682742438-1868972822.1682742438&_gac=1.57089112.1682742438.Cj0KCQjw3a2iBhCFARIsAD4jQB2He-jtnPBg_aJEHNl3nGDFiBhWXCUUoVifTW876-iaJnYhZjrjvjcaAlhJEALw_wcB",
+    "filtertype": "Ikon"
+  },
+  "card8": {
+    "title": "Granby Ranch",
+    "description": "Granby Ranch has nearly 1,000 feet of vertical with 41 trails and over 400 acres of skiable terrain with a full-service rental shop and ski school. Enjoy multiple dining options and night skiing on holiday Fridays and Saturdays. For a different kind of Colorado skiing experience, come to Granby Ranch.",
+    "image_url": "/resources/images/GranbyRanch.jpg",
+    "url": "https://www.indyskipass.com/resort/granby-ranch/",
+    "filtertype": "Indy"
+  },
+  "card9": {
+    "title": "Copper Mountain",
+    "description": "Copper Mountain is a Colorado favorite with naturally divided terrain that offers beginner skiing to the east, intermediate terrain in the middle, and expert skiing to the west. For experts exploring the west side, nothing beats free cat skiing on Tucker Mountain, and for park riders and skiers, head over to the renowned Woodward Terrain Parks.",
+    "image_url": "/resources/images/CopperMountain.jpg",
+    "url": "https://www.coppercolorado.com/",
+    "filtertype": "Ikon"
+  },
+
+  "card10": {
+    "title": "Zermatt",
+    "description": "Zermatt is a world-famous ski resort located in Colorado at the base of the Matterhorn. With over 360 km of ski runs, it's a paradise for skiers and snowboarders of all levels. The resort is known for its stunning views of the Matterhorn and its charming village, which offers a variety of shopping, dining, and nightlife options.",
+    "image_url": "/resources/images/Zermatt.jpg",
+    "url": "https://www.zermatt.ch/",
+    "filtertype": "Ikon"
+  },
+
+  "card11": {
+    "title": "Valle Nevado",
+    "description": "Valle Nevado is a ski resort located in the Andes Mountains of Chile, just outside of Santiago. The resort features over 7,000 acres of skiable terrain, with a variety of runs for skiers and snowboarders of all levels. Valle Nevado is known for its stunning views of the Andes and its modern infrastructure, including luxury hotels, restaurants, and spas.",
+    "image_url": "/resources/images/ValleNevado.jpg",
+    "url": "https://www.vallenevado.com/en/",
+    "filtertype": "Winter Park"
+  },
+
+  "card12": {
+    "title": "Niseko",
+    "description": "Niseko is a ski resort located on the northern island of Hokkaido in Japan. The resort is known for its incredible powder snow, with over 15 meters of snowfall each year. Niseko offers a variety of terrain for skiers and snowboarders of all levels, as well as stunning views of Mount Yotei. The resort also has a vibrant apres-ski scene, with numerous bars and restaurants.",
+    "image_url": "/resources/images/Niseko.png",
+    "url": "https://www.niseko.ne.jp/",
+    "filtertype": "Ikon"
+  },
+
+  "card13": {
+  "title": "Whistler Blackcomb",
+  "description": "Whistler Blackcomb is the largest ski resort in North America, located in British Columbia, Canada. With over 8,100 acres of skiable terrain, it's a paradise for skiers and snowboarders of all levels. The resort has received numerous awards for its exceptional skiing, as well as its village, which offers a variety of shopping, dining, and nightlife options.",
+  "image_url": "/resources/images/WhistlerBlackcomb.jpg",
+  "url": "https://www.whistlerblackcomb.com/",
+  "filtertype": "Winter Park"
+  },
+
+  "card14": {
+  "title": "Squaw Valley Alpine Meadows",
+  "description": "Squaw Valley Alpine Meadows is a world-renowned ski resort located in Lake Tahoe, California. The resort features over 6,000 skiable acres and 42 lifts, making it one of the largest ski resorts in the United States. With a variety of terrain ranging from beginner slopes to expert terrain parks, Squaw Valley Alpine Meadows has something for everyone.",
+  "image_url": "/resources/images/SquawValleyAlpineMeadows.jpg",
+  "url": "https://squawalpine.com/",
+  "filtertype": "Winter Park"
+  },
+
+  "card15": {
+  "title": "Park City Mountain",
+  "description": "Park City Mountain is located in Utah and is the largest ski resort in the United States. With over 7,300 acres of skiable terrain and 348 trails, it offers endless opportunities for skiing and snowboarding. The resort also offers a variety of dining and shopping options, as well as numerous events throughout the ski season.",
+  "image_url": "/resources/images/ParkCityMountain.jpg",
+  "url": "https://www.parkcitymountain.com/",
+  "filtertype": "Epic"
+  },
+  
+  "card16": {
+  "title": "Aspen Snowmass",
+  "description": "Aspen Snowmass is a world-renowned ski resort located in Colorado. The resort features four mountains and over 5,500 acres of skiable terrain, offering something for everyone, from beginner slopes to expert terrain parks. Aspen Snowmass is also known for its luxury accommodations, fine dining, and vibrant nightlife.",
+  "image_url": "/resources/images/AspenSnowmass.jpg",
+  "url": "https://www.aspensnowmass.com/",
+  "filtertype": "Winter Park"
+  },
+
+  "card17": {
+  "title": "Jackson Hole",
+  "description": "Jackson Hole is a ski resort located in Wyoming and is known for its challenging terrain and steep slopes. The resort features over 2,500 acres of skiable terrain, including backcountry skiing, making it a paradise for expert skiers and snowboarders. Jackson Hole is also known for its breathtaking views of the Teton Mountains.",
+  "image_url": "/resources/images/JacksonHole.jpg",
+  "url": "https://www.jacksonhole.com/",
+  "filtertype": "Winter Park"
+  },
+
+  "card18": {
+  "title": "Stowe",
+  "description": "Stowe is a ski resort located in Vermont and is known for its charming New England village and stunning mountain scenery. The resort features over 4,000 acres of skiable terrain, including beginner slopes and expert glades. Stowe is also known for its fine dining and luxury accommodations.",
+  "image_url": "/resources/images/Stowe.jpg",
+  "url": "https://www.stowe.com/",
+  "filtertype": "Epic"
+  },
+
+  "card19": {
+  "title": "Courchevel",
+  "description": "Courchevel is a ski resort located in the French Alps and is known for its luxury accommodations and excellent skiing. The resort features over 600 km of skiable terrain, including gentle slopes for beginners and steep runs for experts. Courchevel is also known for its Michelin-starred restaurants and high-end shopping.",
+  "image_url": "/resources/images/Courchevel.jpg",
+  "url": "https://www.courchevel.com/",
+  "filtertype": "Mountain"
+  },
+
+  "card20": {
+  "title": "Verbier",
+  "description": "Verbier is a ski resort located in the Swiss Alps and is known for its challenging terrain and off-piste skiing. The resort features over 400 km of skiable terrain, including steep slopes and mogul fields. Verbier is also known for its vibrant nightlife and apres-ski scene.",
+  "image_url": "/resources/images/Verbier.jpg",
+  "url": "https://www.verbier.ch/en/",
+  "filtertype": "Ikon"
+  }
+};
+
+
+// Create an array of card objects
+const cardArray = Object.keys(cardDict).map(function(key) {
+  return {
+    title: cardDict[key].title,
+    description: cardDict[key].description,
+    image_url: cardDict[key].image_url,
+    url: cardDict[key].url,
+    filtertype:cardDict[key].filtertype
+  };
+});
+%>
+
+<div class="card-deck">
+    <% cardArray.forEach(function(card) { %>
+        <div class="row mb-5">
+            <div class="col">
+                <div class="card" style="width: 18rem" data-filter-type="<%= card.filtertype %>">
+                    <img class="card-img-top" src="<%= card.image_url %>" alt="IMAGE UNAVAILABLE">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= card.title %></h5>
+                        <p class="card-text"><%= card.description %></p>
+                        <a href="<%= card.url %>" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <% }); %>
+  </div>
